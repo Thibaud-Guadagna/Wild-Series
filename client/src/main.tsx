@@ -2,12 +2,12 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { RouterProvider, createBrowserRouter } from "react-router";
+import Series from "./pages/programs";
 
 /* ************************************************************************* */
 
 // Import the main app component
 import App from "./App";
-import Series from "./pages/programs";
 
 // Import additional components for new routes
 // Try creating these components in the "pages" folder
