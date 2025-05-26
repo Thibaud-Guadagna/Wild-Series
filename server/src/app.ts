@@ -4,7 +4,9 @@ import express from "express";
 
 const app = express();
 
-// Configure it
+app.get("/", (req, res) => {
+  res.send("Welcome to Wild Series !")
+});// Configure it
 
 /* ************************************************************************* */
 
