@@ -1,11 +1,13 @@
 import express from "express";
 import programActions from "../../server/src/modules/item/program/programActions";
 
+
 const router = express.Router();
 
 /* ************************************************************************* */
 // Define Your API Routes Here
 router.get("/api/programs", programActions.browse);
+router.get("/api/programs/:id", programActions.read);
 /* ************************************************************************* */
 
 // Define item-related routes
@@ -16,12 +18,15 @@ router.get("/api/items/:id", itemActions.read);
 router.post("/api/items", itemActions.add);
 
 /* ************************************************************************* */
-import type { RequestHandler } from "express";
+import categoryAction from "./modules/item/program/category/categoryAction";
 
-const sayWelcome: RequestHandler = (req, res) => {
-  res.send("Welcome to Wild Series !");
-};
+router.get("/api/categories", categoryAction.browse)
+router.get("/api/categories/:id", categoryAction.read)
 
-router.get("/", sayWelcome);
+
+import sayActions from "./modules/item/say/sayActions";
+
+router.get("/", sayActions.sayWelcome);
+
 
 export default router;
