@@ -1,7 +1,6 @@
 import express from "express";
 import programActions from "../../server/src/modules/item/program/programActions";
 
-
 const router = express.Router();
 
 /* ************************************************************************* */
@@ -20,13 +19,11 @@ router.post("/api/items", itemActions.add);
 /* ************************************************************************* */
 import categoryAction from "./modules/item/program/category/categoryAction";
 
-router.get("/api/categories", categoryAction.browse)
-router.get("/api/categories/:id", categoryAction.read)
-
+router.get("/api/categories", categoryAction.browse);
+router.get("/api/categories/:id", categoryAction.read);
 
 import sayActions from "./modules/item/say/sayActions";
 
 router.get("/", sayActions.sayWelcome);
-
 
 export default router;
